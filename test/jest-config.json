@@ -1,0 +1,28 @@
+{
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "rootDir": "../",
+    "testEnvironment": "node",
+    "testRegex": [".*\\.spec\\.ts$", ".*\\.e2e-spec\\.ts$"],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "./src/**/*.ts",
+      "!./src/**/interfaces/**"
+    ],
+    "coverageDirectory": "./coverage",
+    "coverageReporters": [
+      "json",
+      "text",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": -10
+      }
+    }
+  }
+  
