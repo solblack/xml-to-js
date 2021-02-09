@@ -8,6 +8,7 @@ export function toCamelCase(param: string) {
     const text = '' + param;
 
     const hasSymbolSeparators = /[-_:]/.test(text);
+    const isAllUpperOrLower = /^([a-z]+|[A-Z]+)$/.test(text);
 
     if (hasSymbolSeparators) {
         const arr = text.split(/[-_:]/);
@@ -18,7 +19,11 @@ export function toCamelCase(param: string) {
         return val[0].toUpperCase() + val.slice(1).toLowerCase();
         });
         return mappedArr.join('');
-    } else {
-        return text[0].toLowerCase() + text.slice(1);
     }
+
+    if(isAllUpperOrLower){
+        return text.toLowerCase();
+    }
+    
+    return text[0].toLowerCase() + text.slice(1);
 }

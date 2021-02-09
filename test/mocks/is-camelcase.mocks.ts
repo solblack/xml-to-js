@@ -11,6 +11,7 @@ export const toCamelCaseArr = [
   { num: 6, param: 'test:camel', expected: 'testCamel' },
   { num: 7, param: 'Test:Camel', expected: 'testCamel' },
   { num: 8, param: 'TEST-CAMEL', expected: 'testCamel' },
+  { num: 9, param: 'TEST', expected: 'test' },
   // TODO deal with this edge test case
-  // { num: 9, param: 'PDFStream', expected: 'pdfStream'}
+  // { num: 10, param: 'PDFStream', expected: 'pdfStream'}
 ];
