@@ -1,6 +1,6 @@
 {
   "name": "xml2customjs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Library to custom convert an XML into a Javascript object or JSON",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -22,7 +22,9 @@
     "xml",
     "xml to js",
     "xml to json",
-    "xml-to-js", "xml2customjs", "xml converter"
+    "xml-to-js",
+    "xml2customjs",
+    "xml converter"
   ],
   "author": "Sol Latorre Beorlegui <solbeor@gmail.com>",
   "license": "MIT",
