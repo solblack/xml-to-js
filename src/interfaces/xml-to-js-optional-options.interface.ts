@@ -3,5 +3,4 @@ export interface XmlToJsOptionalOptions {
     objectFields?: string[];
     fieldNameFormat?: 'camel' | 'snake' | 'none';
     fieldNameMapping?: { [key: string]: string };
-    format?: 'object' | 'json';
 }

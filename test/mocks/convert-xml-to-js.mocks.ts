@@ -7,7 +7,6 @@
 //   objectFields?: string[];
 //   fieldNameFormat?: 'camel' | 'snake' | 'none';
 //   fieldNameMapping?: { [key: string]: string };
-//   format?: 'object' | 'json';
 // }
 export const convertXmlToJsArr = [
   {
@@ -32,7 +31,6 @@ export const convertXmlToJsArr = [
     </CD>
   </CATALOG>`,
     paramOptions: {
-      format: 'object',
       fieldNameFormat: 'snake',
       arrayFields: ['CATALOG'],
       fieldNameMapping: { CATALOG: 'cd_catalog' },
@@ -72,7 +70,6 @@ export const convertXmlToJsArr = [
     </cd>
   </catalog>`,
     paramOptions: {
-      format: 'object',
       fieldNameFormat: 'snake',
       arrayFields: ['catalog'],
       fieldNameMapping: { catalog: 'cd_catalog' },
@@ -119,38 +116,6 @@ export const convertXmlToJsArr = [
   },
   {
     num: 4,
-    description: 'Return JSON with snakecase format',
-    paramXml: `<CATALOG>
-    <CD>
-    <ALBUM-TITLE>Empire Burlesque</ALBUM-TITLE>
-    <ARTIST-NAME>Bob Dylan</ARTIST-NAME>
-    <COUNTRY>USA</COUNTRY>
-    <COMPANY>Columbia</COMPANY>
-    <PRICE>10.90</PRICE>
-    <YEAR>1985</YEAR>
-    </CD>
-  </CATALOG>`,
-    paramOptions: {
-      format: 'json',
-      fieldNameFormat: 'snake',
-      arrayFields: ['CATALOG'],
-    },
-
-    expected: JSON.stringify({
-      catalog: [
-        {
-          album_title: 'Empire Burlesque',
-          artist_name: 'Bob Dylan',
-          country: 'USA',
-          company: 'Columbia',
-          price: '10.90',
-          year: '1985',
-        },
-      ],
-    }),
-  },
-  {
-    num: 5,
     description: 'Fieldnames mapping, path object setting and camelcase formatting',
     paramXml: `<?xml version="1.0" encoding="UTF-8"?>
     <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -174,7 +139,6 @@ export const convertXmlToJsArr = [
        </SOAP-ENV:Body>
     </SOAP-ENV:Envelope>`,
     paramOptions: {
-      format: 'object',
       fieldNameFormat: 'camel',
       objectFields: ['SOAP-ENV:Body/etp:AcceptPayment/payment'],
       fieldNameMapping: {pType: "payment_type", 'etp:AcceptPayment': 'accept_payment'}
@@ -207,7 +171,7 @@ export const convertXmlToJsArr = [
     }
   },
   {
-    num: 6,
+    num: 5,
     description: 'Fieldnames mapping, path object setting and camelcase formatting',
     paramXml: `<?xml version="1.0" encoding="UTF-8"?>
     <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -234,7 +198,6 @@ export const convertXmlToJsArr = [
        </SOAP-ENV:Body>
     </SOAP-ENV:Envelope>`,
     paramOptions: {
-      format: 'object',
       fieldNameFormat: 'camel',
       objectFields: ['SOAP-ENV:Body/etp:AcceptPayment/payments/currency/name'],
       fieldNameMapping: {pType: "payment_type", 'etp:AcceptPayment': 'accept_payment'}
@@ -273,7 +236,7 @@ export const convertXmlToJsArr = [
     }
   },
   {
-    num: 7,
+    num: 6,
     description: 'Testing function with no options object',
     paramXml: `<CATALOG>
     <CD>
@@ -300,7 +263,7 @@ export const convertXmlToJsArr = [
     },
   },
   {
-    num: 8,
+    num: 7,
     description: 'Fieldnames mapping, path object setting and camelcase formatting',
     paramXml: `<?xml version="1.0" encoding="UTF-8"?>
     <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
@@ -327,7 +290,6 @@ export const convertXmlToJsArr = [
        </SOAP-ENV:Body>
     </SOAP-ENV:Envelope>`,
     paramOptions: {
-      format: 'object',
       fieldNameFormat: 'camel',
       objectFields: ['SOAP-ENV:Body/etp:AcceptPayment/payment/currency/names'],
       fieldNameMapping: {pType: "payment_type", 'etp:AcceptPayment': 'accept_payment'}
@@ -367,7 +329,7 @@ export const convertXmlToJsArr = [
   },
   //TODO add functionality to support multidimentional arrays
   // {
-  //   num: 9,
+  //   num: 8,
   //   description: 'Testing arrays in arrays',
   //   paramXml: `<COLOR_GROUPS>
   //   <GROUP>
@@ -382,7 +344,6 @@ export const convertXmlToJsArr = [
   //   </GROUP>
   // </COLOR_GROUPS>`,
   //   paramOptions: {
-  //     format: 'object',
   //     fieldNameFormat: 'snake',
   //     arrayFields: ['COLOR_GROUPS', 'GROUP'],
   //   },

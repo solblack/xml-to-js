@@ -40,7 +40,6 @@ const xml = `<MUSIC-CATALOG>
 `;
 
 const converterOptions = {
-    format: 'object',
     fieldNameFormat: 'snake',
     arrayFields: ['MUSIC-CATALOG'],
     objectFields: ['PRICE'],
@@ -56,7 +55,6 @@ console.log(convertedObjectWithOptions);
 The convertion options parameter is optional and all of its properties are optional as well.
 | Option        | Default          | Description  |
 | :------------- |:-------------| :-----|
-| format     | "object" | The converter function will return a Javascript object if you set this to "object" or it will return a JSON text if you set it to "json" |
 | fieldNameFormat     | "none"      |   This option will be used to format all property keys. By default, it will be set to "none", meaning no format will be performed. You can set it to "camel" for camelcase format, "snake" for snakecase or "none" for no formatting. |
 | fieldNameMapping | { }      |    This object will be used to change the name of the property keys. Each key of this object needs to be the exact same as the name (in the original format) of the XML tag, and the value will be the name used to replace the property key during the convertion. |
 | arrayFields | [ ]      |    This property must be an array containing the names of the XML tags that are supposed to be arrays. Example: ['propertyKey1', 'propertyKey2']. IMPORTANT: each string should be the exact same as the name (in the original format) of the XML tag |
@@ -79,7 +77,6 @@ const xml = `<MUSIC-CATALOG>
 `;
 
 const converterOptions = {
-    format: 'object',
     fieldNameFormat: 'snake',
     arrayFields: ['MUSIC-CATALOG'],
     objectFields: ['PRICE'],
@@ -129,6 +126,12 @@ Then, the result would be this:
 ```
 
 Notice that, by default, XML tags with properties are converted into objects where properties are represented with an '@' and the name of the property. If the tag has a text value instead of other child elements, then the text value is represented with an '#'. In the case you are dealing with XML tags with properties that contain other elements instead of text, you could use the objectFields option to have the properties names without the '@' prefix.
+
+##### Convertion to JSON
+If you wish to convert the XML to a JSON format instead of a Javascript object format, just use the function convertXmlToJson instad:
+```js
+const convertedObject = convert.convertXmlToJson(xml, converterOptions); // This will return a JSON string
+```
 
 ***
 

@@ -11,7 +11,8 @@
     "build": "tsc",
     "prepare": "npm run test:coverage && npm run build",
     "test": "jest --config ./test/jest-config.json",
-    "test:coverage": "jest --config ./test/jest-config.json --coverage"
+    "test:coverage": "jest --config ./test/jest-config.json --coverage",
+    "release": "npm version patch"
   },
   "repository": {
     "type": "git",

@@ -9,7 +9,6 @@ const optionsObj: XmlToJsOptions = {
   objectFields: [],
   fieldNameFormat: 'snake',
   fieldNameMapping: {},
-  format: 'object',
 };
 
 export const transformArrayArr = [
