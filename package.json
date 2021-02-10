@@ -1,5 +1,5 @@
 {
-  "name": "xml-to-js",
+  "name": "xmltojs",
   "version": "1.0.0",
   "description": "Library to custom convert an XML into a Javascript object or JSON",
   "main": "./dist/index.js",
@@ -15,20 +15,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/solblack/xml-to-js.git"
+    "url": "https://github.com/solblack/xmltojs.git"
   },
   "keywords": [
     "xml",
     "xml to js",
     "xml to json",
-    "xml-to-js"
+    "xml-to-js", "xmltojs"
   ],
   "author": "Sol Latorre Beorlegui <solbeor@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/solblack/xml-to-js/issues"
+    "url": "https://github.com/solblack/xmltojs/issues"
   },
-  "homepage": "https://github.com/solblack/xml-to-js",
+  "homepage": "https://github.com/solblack/xmltojs",
   "dependencies": {
     "xmlbuilder2": "^2.4.0"
   },
