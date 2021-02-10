@@ -20,12 +20,12 @@ This library is developed using Typescript and the package has built-in type dec
 ## Installation
 
 ```
-npm install --save xmltojs
+npm install --save xml2customjs
 ```
 ## Quick start
 
 ```js
-const convert = require('xmltojs');
+const convert = require('xml2customjs');
 
 const xml = `<MUSIC-CATALOG>
 <CD>
@@ -65,7 +65,7 @@ The convertion options parameter is optional and all of its properties are optio
 ## Convertion examples
 Let's see how the convertion works in the quick start example above:
 ```javascript
-const convert = require('xmltojs');
+const convert = require('xml2customjs');
 const xml = `<MUSIC-CATALOG>
 <CD>
 <TITLE>Empire Burlesque</TITLE>
@@ -139,15 +139,15 @@ Notice that, by default, XML tags with properties are converted into objects whe
 To perform tests on this project, download the full repository from GitHub (not from npm) and then do the following:
 
 ```
-cd xmltojs
+cd xml2customjs
 npm install
 npm test
 ```
 
 ## Reporting
 
-Use [this link](https://github.com/solblack/xmltojs/issues) to report an issue or bug. Please include a sample code where the code is failing.
+Use [this link](https://github.com/solblack/xml2customjs/issues) to report an issue or bug. Please include a sample code where the code is failing.
 
 # License
 
-[MIT](https://github.com/solblack/xmltojs/blob/master/LICENSE)
+[MIT]
